@@ -1,0 +1,19 @@
+{
+  "name": "reveal.js-visualization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "visualization.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "on-build-webpack": "^0.1.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-concat-plugin": "^3.0.0",
+    "wrapper-webpack-plugin": "^2.1.0"
+  }
+}
