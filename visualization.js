@@ -18,8 +18,9 @@ let Visualization = {
 
 	 	// initialize visualizations in all slides
 		for(let slide of Reveal.getSlides()) {
+			// NOTE: we want to find elements in the current slide, not nested ones
 			let container = Array.from(slide.getElementsByTagName("div"))
-				.filter(c => c.hasAttribute("data-visual-algorithm"))[0]
+				.filter(c => c.parentElement === slide && c.hasAttribute("data-visual-algorithm"))[0]
 			if(!container) continue
 
 			// Some magic to properly scale the canvas. Reveal.js scales all slides with CSS
@@ -70,7 +71,7 @@ let Visualization = {
 			// these are execute at the beginning, to form the initial state of the animation
 			let initial = Array.from(slide.getElementsByTagName("div"))
 				.filter(function(a) {
-					return !a.classList.contains("fragment") && a.hasAttribute("data-visual-action")
+					return a.parentElement === slide && !a.classList.contains("fragment") && a.hasAttribute("data-visual-action")
 				})
 
 			for(let step of initial) {
@@ -174,7 +175,7 @@ function syncVisual(slide) {
 
 	let fragments = Array.from(slide.getElementsByClassName("fragment"))
 		.filter(function(a) {
-			return a.hasAttribute("data-visual-action")
+			return a.parentElement === slide && a.hasAttribute("data-visual-action")
 		})
 
 	let current = currentFragment(vi)
