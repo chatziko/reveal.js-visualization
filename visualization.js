@@ -1,24 +1,5 @@
 let Visualization = {
 	init: function() {
-		// CSS rule for properly scaling canvas
-		var sheet = (function() {
-			var style = document.createElement("style");
-			document.head.appendChild(style);
-			return style.sheet;
-		})();
-		sheet.insertRule(`
-			div[data-visual-algorithm] {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-		`)
-		sheet.insertRule(`
-			div[data-visual-algorithm] canvas {
-				flex-shrink: 0;
-			}
-		`)
-
 		// events
 		Reveal.addEventListener('slidechanged', function(event) {
 			syncVisual(event.currentSlide)
@@ -61,6 +42,13 @@ let Visualization = {
 			// the new canvas size, plus the scaling (alghough we have "canceled" it out).
 			// So we force the container to have the original height.
 			container.style.height = origHeight + "px"
+
+			// Also, we need to center the canvas within its container. However, the canvas is _larger_
+			// than the container, which makes centering tricky. It is achieved via a flexbox below.
+			container.style.display = 'flex'
+			container.style.justifyContent = 'center'
+			container.style.alignItems = 'center'
+			canvas.style.flexShrink = 0
 
 			// Create manager.
 			var manager = initCanvas(canvas, null)
