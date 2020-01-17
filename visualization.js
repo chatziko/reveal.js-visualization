@@ -20,6 +20,7 @@ let Visualization = {
 		Reveal.addKeyBinding(32, onNext)
 		Reveal.addKeyBinding(80, onPrev)
 		Reveal.addKeyBinding(39, onRight)
+		Reveal.addKeyBinding(40, onDown)
 
 	 	// initialize visualizations in all slides
 		for(let slide of Reveal.getSlides()) {
@@ -174,6 +175,15 @@ function onRight() {
 		vi.manager.skipForward()
 	else
 		Reveal.right()
+}
+
+function onDown() {
+	let vi = Reveal.getCurrentSlide().visualInfo
+
+	if(vi && (vi.manager.awaitingStep || vi.manager.currentlyAnimating))
+		vi.manager.skipForward()
+	else
+		Reveal.down()
 }
 
 function syncVisual(slide) {
