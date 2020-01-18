@@ -1,7 +1,8 @@
 # reveal.js-visualization
 
-## Demo
-
+This is a plugin that allows to use David Galles'
+[visualization library](https://www.cs.usfca.edu/~galles/visualization/)
+in a [reveal.js](https://github.com/hakimel/reveal.js/) presentation.
 A demo is available [here](https://chatziko.github.io/reveal.js-visualization/).
 
 ## Install
