@@ -18,6 +18,11 @@ jobs:
         npm install
         npx webpack
 
+        npm install http-server
+        cd demo
+        npx http-server &
+        google-chrome --headless --print-to-pdf="demo.pdf" 'http://localhost:8080/?print-pdf'
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
       env:
