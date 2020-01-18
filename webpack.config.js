@@ -19,74 +19,85 @@ const animations = [
     'UndoFunctions'
 ]
 
-// Base algorithms, needed by others
+// Algorithms, comment out those you don't need (but make sure to include base classes)
 const algorithms = [
+    /////// Base of all //////
     'Algorithm',
-    'Graph',
-    'Hash',
-    'Recursive',
-]
 
-// Optional algorithms, comment out those you don't need
-algorithms.push(
-    // 'AVL',
-    // 'BFS',
+    /////// Basic ////////////
+    'StackArray',
+    'StackLL',
+    'QueueArray',
+    'QueueLL',
+    'Search',
+
+    /////// Trees //////////
+    'AVL',
+    'BPlusTree',
     'BST',
-    // 'BinomialQueue',
-    // 'BPlusTree',
-    // 'BST',
-    // 'BTree',
+    'BST',
+    'BTree',
+    'RadixTree',
+    'RedBlack',
+    'SplayTree',
+    'Trie',
+    // 'TrinarySearchTree',
+    'TST',
+
+    /////// Heaps /////////////
+    'Heap',
+    'BinomialQueue',
+    'FibonacciHeap',
+    'LeftistHeap',
+    'SkewHeap',
+
+    /////// Recursive /////////
+    'Recursive',
+    'RecFact',
+    'RecQueens',
+    'RecReverse',
+
+    /////// Hashing ///////////
+    'Hash',
+    'ClosedHashBucket',
+    'ClosedHash',
+    'OpenHash',
+
+    /////// Sort ///////////////
     // 'BucketSort',
-    // 'ChangingCoordinate2D',
-    // 'ChangingCoordinate3D',
-    // 'ClosedHashBucket',
-    // 'ClosedHash',
     // 'ComparisonSort',
-    // 'ConnectedComponent',
     // 'CountingSort',
-    // 'DFS',
-    // 'DijkstraPrim',
+    // 'HeapSort',
+    // 'RadixSort',
+
+    /////// Graph //////////////
+    'Graph',
+    'BFS',
+    'ConnectedComponent',
+    'DFS',
+    'DijkstraPrim',
+    'Floyd',
+    'Kruskal',
+    'TopoSortDFS',
+    'TopoSortIndegree',
+
+    ///////// Misc ////////////
     // 'DisjointSet',
+    // 'Huffman',
+
+    ///////// Dynamic Programming //////
     // 'DPChange',
     // 'DPFib',
     // 'DPLCS',
     // 'DPMatrixMultiply',
-    // 'FibonacciHeap',
-    // 'Floyd',
-    // 'Graph',
-    // 'Hash',
-    // 'Heap',
-    // 'HeapSort',
-    // 'Huffman',
-    // 'Kruskal',
-    // 'LeftistHeap',
-    // 'MyAlgorithm',
-    // 'OpenHash',
-    // 'QueueArray',
-    // 'QueueLL',
-    // 'RadixSort',
-    // 'RadixTree',
-    // 'RecFact',
-    // 'RecQueens',
-    // 'RecReverse',
-    // 'Recursive',
-    // 'RedBlack',
+
+    ///////// Geometric //////////////
+    // 'ChangingCoordinate2D',
+    // 'ChangingCoordinate3D',
     // 'RotateScale2D',
     // 'RotateScale3D',
     // 'RotateTranslate2D',
-    // 'Search',
-    // 'SimpleStack',
-    // 'SkewHeap',
-    // 'SplayTree',
-    'StackArray',
-    'StackLL',
-    // 'TestAlgorithmOld',
-    // 'TopoSortDFS',
-    // 'TopoSortIndegree',
-    // 'Trie',
-    // 'TrinarySearchTree',
-    // 'TST',
-)
+]
 
 const files = [].concat(
     animations.map(m => `./visualization/AnimationLibrary/${m}.js`),
