@@ -1,5 +1,9 @@
 # reveal.js-visualization
 
+## Demo
+
+A demo is available [here](https://chatziko.github.io/reveal.js-visualization/).
+
 ## Install
 
 ```
