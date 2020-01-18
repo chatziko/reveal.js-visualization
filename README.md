@@ -6,7 +6,7 @@
 npm install
 npx webpack
 ```
-Then open `demo/demo.html`.
+Then open `demo/index.html`.
 
 To use in your presentation copy `plugin/visualization/visualization.js` to your
 presentation directory, and load it when initialization reveal.js:
