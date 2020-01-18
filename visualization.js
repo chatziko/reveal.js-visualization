@@ -81,11 +81,15 @@ function initializeSlides() {
 		if(seed != undefined)
 			Math.seedrandom(seed)
 
-		// Finally create the algorithm, with an eval hack (classes exist in the wrapper function's scope, we avoid exporting to global scope)
-		// Impotant: the constructor receives the canvas' width/height, which is used eg to center objects. We pass the _original_
-		// size (without scaling), cause the scaling is automatically applied by scale().
+		// Algorithm arguments. Impotant: the constructor receives the canvas' width/height, which is used eg to center objects.
+		// We pass the _original_ size (without scaling), cause the scaling is automatically applied by scale().
+		let algArgs = [manager, origWidth, origHeight]
+		for(let i = 1; container.hasAttribute("data-visual-algorithm-arg-"+i); i++)
+			algArgs.push(parseValue(container.getAttribute("data-visual-algorithm-arg-"+i)))
+
+		// Finally create the algorithm. We get the class with an eval hack (classes exist in the wrapper function's scope, we avoid exporting to global scope)
 		let algClass = eval(container.getAttribute("data-visual-algorithm"))
-		let algorithm = new algClass(manager, origWidth, origHeight)
+		let algorithm = new (Function.prototype.bind.apply(algClass, [null].concat(algArgs)))		// 'new' with variable arguments
 
 		manager.SetPaused(true)
 		// manager.SetSpeed(0)
