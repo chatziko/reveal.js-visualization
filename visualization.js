@@ -212,10 +212,10 @@ function syncVisual(slide) {
 
 	let fragments = Array.from(slide.getElementsByClassName("fragment")).filter(f => f.parentElement === slide)
 	let animFragments = fragments.filter(f => f.hasAttribute("data-visual-action"))
-	let currentFragment = fragments.filter(f => f.classList.contains("current-fragment"))[0]
+	let visibleFragIndices = fragments.filter(f => f.classList.contains("visible")).map(f => f.getAttribute("data-fragment-index"))
 
 	let current = currentAnimFragment(vi)
-	let toShow = currentFragment ? currentFragment.getAttribute("data-fragment-index") : -1;
+	let toShow = visibleFragIndices.length ? Math.max.apply(null, visibleFragIndices) : -1;
 
 	while(toShow < current) {
 		vi.manager.skipBack()
