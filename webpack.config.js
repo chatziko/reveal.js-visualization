@@ -35,7 +35,6 @@ const algorithms = [
     'AVL',
     'BPlusTree',
     'BST',
-    'BST',
     'BTree',
     'RadixTree',
     'RedBlack',
