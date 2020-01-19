@@ -47,15 +47,17 @@ function initializeSlides() {
 		// draw larger graphics in it. We do this with the folloing hacks:
 		//
 		// We first cancel the canvas' scaling by applying an inverse scale()
-		var scale = Reveal.getScale()
+		let revealScale = Reveal.getScale()
 		let canvas = container.childNodes[0]
-		canvas.style.transform = "scale(" + (1/scale) + ")"
+		canvas.style.transform = "scale(" + (1/revealScale) + ")"
 
-		// We make the canvas larger by increasing its width/height
+		// We make the canvas larger by increasing its width/height.
+		// The user can also set his own scale in the data-visual-scale attribute
+		let fullScale = revealScale * (container.getAttribute("data-visual-scale") || 1)
 		let origWidth = canvas.width
 		let origHeight = canvas.height
-		canvas.width = Math.floor(scale * canvas.width)
-		canvas.height = Math.floor(scale * canvas.height)
+		canvas.width = Math.floor(fullScale * canvas.width)
+		canvas.height = Math.floor(fullScale * canvas.height)
 
 		// Hoever the container has become too large now, because it takes into account
 		// the new canvas size, plus the scaling (alghough we have "canceled" it out).
@@ -66,7 +68,7 @@ function initializeSlides() {
 		// than the container, which makes centering tricky. It is achieved via a flexbox below.
 		container.style.display = 'flex'
 		container.style.justifyContent = 'center'
-		container.style.alignItems = 'center'
+		container.style.alignItems = 'start'
 		canvas.style.flexShrink = 0
 
 		// Create manager.
@@ -74,7 +76,7 @@ function initializeSlides() {
 
 		// We apply scale() to the canvas' ctx, so that all graphics are drawn larger
 		// This must be done after creating the manager.
-		canvas.getContext("2d").scale(scale, scale)
+		canvas.getContext("2d").scale(fullScale, fullScale)
 
 		// Seed for Math.random can be passed as 'data-visual-seed'
 		let seed = container.getAttribute("data-visual-seed")
