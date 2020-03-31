@@ -716,6 +716,7 @@
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
+					// async: true is important so that Reveal.getScale() is updated before initializing the visualization
 					{ src: 'plugin/visualization/visualization.js', async: true }
 				]
 			});
