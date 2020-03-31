@@ -124,10 +124,7 @@ function initializeSlides() {
 }
 
 function parseValue(s) {
-	if(s.match(/^-?[0-9]$/))
-		return Number.parseInt(s)
-	else
-		return s
+	return s == "" ? "" : JSON.parse(s);
 }
 
 // Returns the current fragment of the visualization animation
