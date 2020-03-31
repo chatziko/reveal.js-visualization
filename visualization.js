@@ -124,7 +124,7 @@ function initializeSlides() {
 }
 
 function parseValue(s) {
-	if(s.match(/^[0-9]$/))
+	if(s.match(/^-?[0-9]$/))
 		return Number.parseInt(s)
 	else
 		return s
