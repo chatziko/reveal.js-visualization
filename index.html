@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Data Structure Visualizations - reveal.js plugin</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style>
+		/* Complete remove current-visible fragments when they are not shown */
+		.fragment.current-visible:not(.current-fragment) {
+			display: none;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>Data Structure Visualizations</h2>
+					<h3>reveal.js plugin</h3>
+					<br>
+					<p>
+						<small>Created by <a href="http://www.chatzi.org/">Kostas Chatzikokolakis</a>
+						using <a href="https://www.cs.usfca.edu/~galles/">David Galles</a>'
+						visualization <a href="https://www.cs.usfca.edu/~galles/visualization/">library</a>.
+						</small>
+					</p>
+				</section>
+
+				<section>
+					<h3>Demo</h3>
+					<br>
+					<ul>
+					<li>Shows many of the provided animations<br>
+						<ul><li>full list is available <a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">here</a></ul>
+					<li>Each action is shown just once (to keep it short)
+						<!-- <ul><li>not meant to show the algorithms</ul> -->
+					<li>Actions are reveal.js fragments
+						<ul><li>easy to create arbitrary sequences</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Navigation</h3>
+					<br>
+					<p><b>right</b> / <b>left</b> : move one <b>action</b> at a time.</p>
+					<p><b>down</b> / <b>up</b> : same (vertical slides)</p>
+					<p><b>Space,N</b> / <b>P</b> : animate one <b>step</b> at a time.</p>
+				</section>
+
+				<section>
+					<section>
+						<h3>Basics</h3>
+						<ul>
+							<li><a href="#/StackArray">Stack: Array Implementation</a>
+							<li><a href="#/StackLL">Stack: Linked List Implementation</a>
+							<li><a href="#/QueueArray">Queue: Array Implementation</a>
+							<li><a href="#/QueueLL">Queue: Linked List Implementation</a>
+							<li><a href="#/Search">Binary and Linear Search</a>
+						</ul>
+					</section>
+
+					<section id="StackArray">
+						<h3>Stack: Array Implementation</h3>
+
+						<div class="fragment" data-fragment-index="1" data-visual-action="push" data-visual-value="42"></div>
+						<div class="fragment" data-fragment-index="2" data-visual-action="pop" data-visual-value=""></div>
+
+						<div data-visual-algorithm="StackArray"><canvas width="910" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Push</p>
+						<p class="fragment current-visible" data-fragment-index="2">Pop</p>
+					</section>
+
+					<section id="StackLL">
+						<h3>Stack using Linked List</h3>
+
+						<div class="fragment" data-fragment-index="1" data-visual-action="push" data-visual-value="42"></div>
+						<div class="fragment" data-fragment-index="2" data-visual-action="pop" data-visual-value=""></div>
+
+						<div data-visual-algorithm="StackLL"><canvas width="910" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Push</p>
+						<p class="fragment current-visible" data-fragment-index="2">Pop</p>
+					</section>
+
+					<section id="QueueArray">
+						<h3>Queue using Array</h3>
+
+						<div class="fragment" data-fragment-index="1" data-visual-action="enqueue" data-visual-value="42"></div>
+						<div class="fragment" data-fragment-index="2" data-visual-action="dequeue" data-visual-value=""></div>
+
+						<div data-visual-algorithm="QueueArray"><canvas width="910" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Enqueue</p>
+						<p class="fragment current-visible" data-fragment-index="2">Dequeue</p>
+					</section>
+
+					<section id="QueueLL">
+						<h3>Queue using Linked List</h3>
+
+						<div class="fragment" data-fragment-index="1" data-visual-action="enqueue" data-visual-value="42"></div>
+						<div class="fragment" data-fragment-index="2" data-visual-action="dequeue" data-visual-value=""></div>
+
+						<div data-visual-algorithm="QueueLL"><canvas width="910" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Enqueue</p>
+						<p class="fragment current-visible" data-fragment-index="2">Dequeue</p>
+					</section>
+
+					<section id="Search">
+						<h3>Binary and Linear Search</h3>
+
+						<div class="fragment" data-fragment-index="1" data-visual-action="linearSearch" data-visual-value="346"></div>
+						<div class="fragment" data-fragment-index="2" data-visual-action="binarySearch" data-visual-value="346"></div>
+
+						<div data-visual-algorithm="Search" data-visual-seed="1"><canvas width="920" height="450"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Linear Search</p>
+						<p class="fragment current-visible" data-fragment-index="2">Binary Search</p>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h3>Trees</h3>
+						<ul>
+							<li><a href="#/BST">Binary Search Trees</a>
+							<li><a href="#/AVL">AVL Trees</a>
+							<li><a href="#/RedBlack">Red-Black Trees</a>
+							<li><a href="#/SplayTree">Splay Trees</a>
+							<li><a href="#/Trie">Trie (Prefix Tree)</a>
+							<li><a href="#/RadixTree">Radix Tree (Compact Trie)</a>
+							<li><a href="#/TST">Ternary Search Tree (Trie with BST)</a>
+							<li><a href="#/BTree">B Trees</a>
+							<li><a href="#/BPlusTree">B+ Trees</a>
+						</ul>
+					</section>
+
+					<section id="BST">
+						<h3>Binary Search Trees</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="1"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="15" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value="2" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value="15" data-fragment-index="3"></div>
+						<div class="fragment" data-visual-action="printTree" data-visual-value="" data-fragment-index="4"></div>
+
+						<div data-visual-algorithm="BST"><canvas width="900" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+						<p class="fragment current-visible" data-fragment-index="4">Print</p>
+					</section>
+
+					<section id="AVL">
+						<h3>AVL Trees</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="1"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="15" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value="2" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value="15" data-fragment-index="3"></div>
+						<div class="fragment" data-visual-action="printTree" data-visual-value="" data-fragment-index="4"></div>
+
+						<div data-visual-algorithm="AVL"><canvas width="900" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+						<p class="fragment current-visible" data-fragment-index="4">Print</p>
+					</section>
+
+					<section id="RedBlack">
+						<h3>Red-Black Trees</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="1"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="15" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value="2" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value="15" data-fragment-index="3"></div>
+						<div class="fragment" data-visual-action="printTree" data-visual-value="" data-fragment-index="4"></div>
+
+						<div data-visual-algorithm="RedBlack"><canvas width="900" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+						<p class="fragment current-visible" data-fragment-index="4">Print</p>
+					</section>
+
+					<section id="SplayTree">
+						<h3>Splay Trees</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="1"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="15" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value="2" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value="15" data-fragment-index="3"></div>
+						<div class="fragment" data-visual-action="printTree" data-visual-value="" data-fragment-index="4"></div>
+
+						<div data-visual-algorithm="SplayTree"><canvas width="900" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+						<p class="fragment current-visible" data-fragment-index="4">Print</p>
+					</section>
+
+					<section id="Trie">
+						<h3>Trie (Prefix Tree)</h3>
+
+						<div data-visual-action="add" data-visual-value='"ABC"'></div>
+						<div data-visual-action="add" data-visual-value='"FOO"'></div>
+						<div data-visual-action="add" data-visual-value='"BA"'></div>
+						<div data-visual-action="add" data-visual-value='"BAA"'></div>
+						<div data-visual-action="add" data-visual-value='"BAAB"'></div>
+						<div class="fragment" data-visual-action="add" data-visual-value='"BABLA"' data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value='"BAA"' data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value='"BABLA"' data-fragment-index="3"></div>
+						<div class="fragment" data-visual-action="printTree" data-visual-value="" data-fragment-index="4"></div>
+
+						<div data-visual-algorithm="Trie"><canvas width="900" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+						<p class="fragment current-visible" data-fragment-index="4">Print</p>
+					</section>
+
+					<section id="Trie">
+						<h3>Radix Tree (Compact Trie)</h3>
+
+						<div data-visual-action="add" data-visual-value='"ABC"'></div>
+						<div data-visual-action="add" data-visual-value='"FOO"'></div>
+						<div data-visual-action="add" data-visual-value='"BA"'></div>
+						<div data-visual-action="add" data-visual-value='"BAA"'></div>
+						<div data-visual-action="add" data-visual-value='"BAAB"'></div>
+						<div class="fragment" data-visual-action="add" data-visual-value='"BABLA"' data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value='"BAA"' data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value='"BABLA"' data-fragment-index="3"></div>
+						<div class="fragment" data-visual-action="printTree" data-visual-value="" data-fragment-index="4"></div>
+
+						<div data-visual-algorithm="RadixTree"><canvas width="900" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+						<p class="fragment current-visible" data-fragment-index="4">Print</p>
+					</section>
+
+					<section id="TST">
+						<h3>Ternary Search Tree</h3>
+
+						<div data-visual-action="add" data-visual-value='"ABC"'></div>
+						<div data-visual-action="add" data-visual-value='"FOO"'></div>
+						<div data-visual-action="add" data-visual-value='"BA"'></div>
+						<div data-visual-action="add" data-visual-value='"BAA"'></div>
+						<div class="fragment" data-visual-action="add" data-visual-value='"BAAB"' data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value='"BAA"' data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value='"BAAB"' data-fragment-index="3"></div>
+						<div class="fragment" data-visual-action="printTree" data-visual-value="" data-fragment-index="4"></div>
+
+						<div data-visual-algorithm="Ternary"><canvas width="900" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+						<p class="fragment current-visible" data-fragment-index="4">Print</p>
+					</section>
+
+					<section id="BTree">
+						<h3>B Trees</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="1"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="15" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value="2" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value="15" data-fragment-index="3"></div>
+						<div class="fragment" data-visual-action="printTree" data-visual-value="" data-fragment-index="4"></div>
+
+						<!-- arg-1 is the max degree -->
+						<div data-visual-algorithm="BTree" data-visual-algorithm-arg-1="4" data-visual-scale="1.2"><canvas width="700" height="300"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+						<p class="fragment current-visible" data-fragment-index="4">Print</p>
+					</section>
+
+					<section id="BPlusTree">
+						<h3>B+ Trees</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="1"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="15" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value="2" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value="15" data-fragment-index="3"></div>
+						<div class="fragment" data-visual-action="printTree" data-visual-value="" data-fragment-index="4"></div>
+
+						<div data-visual-algorithm="BPlusTree" data-visual-scale="1.2"><canvas width="700" height="300"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+						<p class="fragment current-visible" data-fragment-index="4">Print</p>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h3>Hashing</h3>
+						<ul>
+							<li><a href="#/OpenHash">Open Hash Tables (Closed Addressing)</a>
+							<li><a href="#/ClosedHash">Closed Hash Tables (Open Addressing)</a>
+							<li><a href="#/ClosedHashBucket">Closed Hash Tables, using buckets</a>
+						</ul>
+					</section>
+
+					<section id="OpenHash">
+						<h3>Open Hash Tables (Closed Addressing)</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="1"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="15" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value="2" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value="15" data-fragment-index="3"></div>
+
+						<div data-visual-algorithm="OpenHash"><canvas width="940" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+					</section>
+
+					<section id="ClosedHash">
+						<h3>Closed Hash Tables (Open Addressing)</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="1"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="15" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value="2" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value="15" data-fragment-index="3"></div>
+
+						<div data-visual-algorithm="ClosedHash"><canvas width="940" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+					</section>
+
+					<section id="ClosedHashBucket">
+						<h3>Closed Hash Tables, using buckets</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="1"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="15" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="deleteElement" data-visual-value="2" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="findElement" data-visual-value="15" data-fragment-index="3"></div>
+
+						<div data-visual-algorithm="ClosedHashBucket"><canvas width="940" height="460"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Delete</p>
+						<p class="fragment current-visible" data-fragment-index="3">Find</p>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h3>Heaps</h3>
+						<ul>
+							<li><a href="#/Heap">Heaps</a>
+							<li><a href="#/BinomialQueue">Binomial Queues</a>
+							<li><a href="#/FibonacciHeap">Fibonacci Heaps</a>
+							<li><a href="#/LeftistHeap">Leftist Heaps</a>
+							<li><a href="#/SkewHeap">Skew Heaps</a>
+						</ul>
+					</section>
+
+					<section id="Heap">
+						<h3>Heaps</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="3"></div>
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="1" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="removeSmallest" data-visual-value="" data-fragment-index="2"></div>
+						<div class="fragment" data-visual-action="buildHeap" data-visual-value="[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1]" data-fragment-index="3"></div>
+
+						<div data-visual-algorithm="Heap"><canvas width="980" height="410"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Remove smallest</p>
+						<p class="fragment current-visible" data-fragment-index="3">Build heap</p>
+					</section>
+
+					<section id="BinomialQueue">
+						<h3>Binomial Queues</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="3"></div>
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="7" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="removeSmallest" data-visual-value="" data-fragment-index="2"></div>
+
+						<div data-visual-algorithm="BinomialQueue"><canvas width="800" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Remove smallest</p>
+					</section>
+
+					<section id="FibonacciHeap">
+						<h3>Fibonacci Heaps</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="3"></div>
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="1" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="removeSmallest" data-visual-value="" data-fragment-index="2"></div>
+
+						<div data-visual-algorithm="FibonacciHeap"><canvas width="750" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Remove smallest</p>
+					</section>
+
+					<section id="LeftistHeap">
+						<h3>Leftist Heaps</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="3"></div>
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="1" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="removeSmallest" data-visual-value="" data-fragment-index="2"></div>
+
+						<div data-visual-algorithm="LeftistHeap"><canvas width="450" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Remove smallest</p>
+					</section>
+
+					<section id="LeftistHeap">
+						<h3>Skew Heaps</h3>
+
+						<div data-visual-action="insertElement" data-visual-value="3"></div>
+						<div data-visual-action="insertElement" data-visual-value="2"></div>
+						<div data-visual-action="insertElement" data-visual-value="10"></div>
+						<div data-visual-action="insertElement" data-visual-value="33"></div>
+						<div data-visual-action="insertElement" data-visual-value="7"></div>
+						<div class="fragment" data-visual-action="insertElement" data-visual-value="1" data-fragment-index="1"></div>
+						<div class="fragment" data-visual-action="removeSmallest" data-visual-value="" data-fragment-index="2"></div>
+
+						<div data-visual-algorithm="SkewHeap"><canvas width="450" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Insert</p>
+						<p class="fragment current-visible" data-fragment-index="2">Remove smallest</p>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h3>Graph Algorithms</h3>
+						<ul>
+							<li><a href="#/BFS">Breadth-First Search</a>
+							<li><a href="#/DFS">Depth-First Search</a>
+							<li><a href="#/ConnectedComponent">Connected Components</a>
+							<li><a href="#/Dijkstra">Dijkstra's Shortest Path</a>
+							<li><a href="#/Prim"> Prim's Minimum Cost Spanning Tree </a>
+							<li><a href="#/TopoSortIndegree"> Topological Sort (using Indegree array) </a>
+							<li><a href="#/TopoSortDFS"> Topological Sort (using DFS) </a>
+							<li><a href="#/Floyd"> Floyd-Warshall (all pairs shortest paths) </a>
+							<li><a href="#/Kruskal">Kruskal Minimum Cost Spanning Tree</a>
+						</ul>
+					</section>
+
+					<section id="BFS">
+						<h3>Breadth-First Search</h3>
+
+						<div class="fragment" data-visual-action="doBFS" data-visual-value="1" data-fragment-index="1"></div>
+
+						<!-- arg-1 is the 'directed' flag'-->
+						<div data-visual-algorithm="BFS" data-visual-algorithm-arg-1="0" data-visual-seed="10"><canvas width="980" height="450"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">BFS from 1</p>
+					</section>
+
+					<section id="DFS">
+						<h3>Depth-First Search</h3>
+
+						<div class="fragment" data-visual-action="doDFS" data-visual-value="1" data-fragment-index="1"></div>
+
+						<!-- arg-1 is the 'directed' flag'-->
+						<div data-visual-algorithm="DFS" data-visual-algorithm-arg-1="1" data-visual-seed="10"><canvas width="980" height="450"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">DFS from 1</p>
+					</section>
+
+					<section id="ConnectedComponent">
+						<h3>Connected Components</h3>
+
+						<div class="fragment" data-visual-action="doCC" data-visual-value="1" data-fragment-index="1"></div>
+
+						<div data-visual-algorithm="ConnectedComponent" data-visual-seed="10"><canvas width="980" height="450"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Connected components</p>
+					</section>
+
+					<section id="Dijkstra">
+						<h3>Dijkstra's Shortest Path</h3>
+
+						<div class="fragment" data-visual-action="doDijkstraPrim" data-visual-value="1" data-fragment-index="1"></div>
+
+						<!-- arg-1 is 1 for Dijkstra, 0 for Prim. arg-2 is the directed flag -->
+						<div data-visual-algorithm="DijkstraPrim" data-visual-algorithm-arg-1="1" data-visual-algorithm-arg-2="0" data-visual-seed="10"><canvas width="980" height="450"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Dijkstra from 1</p>
+					</section>
+
+					<section id="Prim">
+						<h3>Prim's Minimum Cost Spanning Tree</h3>
+
+						<div class="fragment" data-visual-action="doDijkstraPrim" data-visual-value="1" data-fragment-index="1"></div>
+
+						<!-- arg-1 is 1 for Dijkstra, 0 for Prim. arg-2 is the directed flag -->
+						<div data-visual-algorithm="DijkstraPrim" data-visual-algorithm-arg-1="0" data-visual-algorithm-arg-2="1" data-visual-seed="10"><canvas width="980" height="450"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Prim from 1</p>
+					</section>
+
+					<section id="TopoSortIndegree">
+						<h3>Topological Sort (Indegree)</h3>
+
+						<div class="fragment" data-visual-action="doTopoSort" data-visual-value="" data-fragment-index="1"></div>
+
+						<div data-visual-algorithm="TopoSortIndegree" data-visual-seed="10"><canvas width="980" height="450"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Topological Sort</p>
+					</section>
+
+					<section id="TopoSortDFS">
+						<h3>Topological Sort (DFS)</h3>
+
+						<div class="fragment" data-visual-action="doTopoSort" data-visual-value="" data-fragment-index="1"></div>
+
+						<div data-visual-algorithm="TopoSortDFS" data-visual-seed="10"><canvas width="980" height="450"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Topological Sort</p>
+					</section>
+
+					<section id="Floyd">
+						<h3>Floyd-Warshall All-Pairs Shortest Path</h3>
+
+						<div class="fragment" data-visual-action="doFloydWarshall" data-visual-value="" data-fragment-index="1"></div>
+
+						<!-- arg-1 is the directed flag -->
+						<div data-visual-algorithm="Floyd" data-visual-algorithm-arg-1="1" data-visual-seed="10"><canvas width="980" height="450"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Floyd-Warshall</p>
+					</section>
+
+					<section id="Kruskal">
+						<h3>Kruskal Minimum Cost Spanning Tree</h3>
+
+						<div class="fragment" data-visual-action="doKruskal" data-visual-value="" data-fragment-index="1"></div>
+
+						<div data-visual-algorithm="Kruskal" data-visual-seed="10"><canvas width="980" height="460"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Kruskal</p>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h3>Recursion</h3>
+						<ul>
+							<li><a href="#/RecFact">Factorial</a>
+							<li><a href="#/Reverse">Reversing a String</a>
+							<li><a href="#/Queens">N-Queens Problem</a>
+						</ul>
+					</section>
+
+					<section id="RecFact">
+						<h3>Factorial</h3>
+
+						<div class="fragment" data-fragment-index="1" data-visual-action="doFactorial" data-visual-value="3"></div>
+
+						<div data-visual-algorithm="RecFact"><canvas width="910" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Factorial(3)</p>
+					</section>
+
+					<section id="Reverse">
+						<h3>Reversing a String</h3>
+
+						<div class="fragment" data-fragment-index="1" data-visual-action="doReverse" data-visual-value='"abc"'></div>
+
+						<div data-visual-algorithm="Reverse"><canvas width="910" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Reverse("abc")</p>
+					</section>
+
+					<section id="Queens">
+						<h3>N-Queens Problem</h3>
+
+						<div class="fragment" data-fragment-index="1" data-visual-action="doQueens" data-visual-value="4"></div>
+
+						<div data-visual-algorithm="Queens"><canvas width="910" height="400"></canvas></div>
+
+						<p class="fragment current-visible" data-fragment-index="1">Qeens(4)</p>
+					</section>
+				</section>
+
+
+
+				<section>
+					<h3>PDF Export</h3>
+					<br>
+					<p>It's supported, just follow the reveal.js <a href="https://github.com/hakimel/reveal.js/#instructions-1">instructions</a></p>
+					<p>Each action (fragment) is exported in a separate page</p>
+					<p>A PDF export of this demo is available <a href="demo.pdf">here</a></p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// minScale: 1,
+				// maxScale: 1,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					// async: true is important so that Reveal.getScale() is updated before initializing the visualization
+					{ src: 'plugin/visualization/visualization.js', async: true }
+				]
+			});
+		</script>
+
+	</body>
+</html>
